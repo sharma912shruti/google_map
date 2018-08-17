@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:layout_below="@+id/place_autocomplete_fragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MapsActivity" />
+
+    <fragment
+        android:id="@+id/place_autocomplete_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+        />
+
+    <!--<AutoCompleteTextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@color/orange_transparent"-->
+        <!--android:id="@+id/searchBox"-->
+        <!--android:layout_margin="@dimen/small_view_margin"-->
+        <!--android:paddingBottom="@dimen/basic_view_margin"-->
+        <!--android:paddingLeft="@dimen/small_view_margin"-->
+        <!--android:textColor="@color/white"-->
+        <!--android:textColorHint="@color/white"-->
+        <!--android:paddingRight="@dimen/small_view_margin"-->
+        <!--android:paddingTop="@dimen/basic_view_margin"-->
+        <!--android:hint="@string/search_here" />-->
+</RelativeLayout>
