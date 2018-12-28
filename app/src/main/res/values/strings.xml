@@ -3,4 +3,5 @@
     <string name="title_activity_maps">Map</string>
     <string name="welcome_text">Welcome in Google Map!</string>
     <string name="search_here">Search Here...</string>
+    <string name="facebook_app_id">231666370842188</string>
 </resources>
