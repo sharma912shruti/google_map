@@ -10,4 +10,18 @@
         android:layout_centerInParent="true"
         android:layout_gravity="center_horizontal" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/api_login"
+        android:layout_below="@+id/login_button"
+        android:layout_centerHorizontal="true"
+        android:text="@string/login_with_api"
+        android:background="@color/colorPrimary"
+        android:paddingRight="@dimen/basic_view_margin"
+        android:paddingLeft="@dimen/basic_view_margin"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/basic_view_margin"
+        android:textAllCaps="false"
+        />
 </RelativeLayout>

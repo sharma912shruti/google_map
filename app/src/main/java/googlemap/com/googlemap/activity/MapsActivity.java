@@ -1,4 +1,4 @@
-package googlemap.com.googlemap;
+package googlemap.com.googlemap.activity;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -47,6 +47,8 @@ import java.util.List;
 import java.util.Locale;
 
 import butterknife.ButterKnife;
+import googlemap.com.googlemap.DirectionsJSONParser;
+import googlemap.com.googlemap.R;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, LocationListener {
 

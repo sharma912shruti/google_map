@@ -4,4 +4,5 @@
     <string name="welcome_text">Welcome in Google Map!</string>
     <string name="search_here">Search Here...</string>
     <string name="facebook_app_id">231666370842188</string>
+    <string name="login_with_api">Login by API</string>
 </resources>

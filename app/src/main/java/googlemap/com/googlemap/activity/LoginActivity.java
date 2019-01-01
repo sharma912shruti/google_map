@@ -1,10 +1,11 @@
-package googlemap.com.googlemap;
+package googlemap.com.googlemap.activity;
 
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
@@ -23,6 +24,16 @@ import java.util.Arrays;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
+import googlemap.com.googlemap.ApiClient;
+import googlemap.com.googlemap.R;
+import googlemap.com.googlemap.model.LoginResponse;
+import googlemap.com.googlemap.response.RequestBody;
+import googlemap.com.googlemap.utils.Constants;
+import okhttp3.Headers;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity{
 
@@ -80,6 +91,30 @@ public class LoginActivity extends AppCompatActivity{
         });
     }
 
+    @OnClick(R.id.api_login)
+    void apiLogin(){
+
+    }
+
+    private void performLogin(String... credentials) {
+//        showProgressDialog("Logging in ...", true);
+        String loginRequest;
+        loginRequest = RequestBody.createLoginRequest(credentials[0], credentials[1]);
+        Call<LoginResponse> loginUser = ApiClient.getApiInterface().login("application/json", loginRequest);
+        loginUser.enqueue(mResponseCallback);
+    }
+
+    Callback mResponseCallback = new Callback() {
+        @Override
+        public void onResponse(Call call, Response response) {
+            Toast.makeText(LoginActivity.this,"api login sucessfully",Toast.LENGTH_LONG).show();
+        }
+
+        @Override
+        public void onFailure(Call call, Throwable t) {
+            Toast.makeText(LoginActivity.this,"api login fail",Toast.LENGTH_LONG).show();
+        }
+    };
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
